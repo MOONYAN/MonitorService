@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
         res.json({
             name: data[0].hostname,
             ip: data[0].ip,
-            status:(data.length==1)?"UP":"DOWN"
+            status: (data.length == 1) ? "UP" : "DOWN"
         });
     });
 
@@ -37,7 +37,17 @@ router.post('/', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    res.json( hosts );
+    res.json(hosts);
+});
+
+router.get('/:id', (req, res) => {
+    let results = hosts.filter(e => e.id == req.params.id);
+    if (results.length > 0) {
+        res.json(results[0]);
+    }
+    else {
+        res.json({ error: 'invalid host id' });
+    }    
 });
 
 module.exports = router;
