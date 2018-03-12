@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var nmap = require('node-nmap');
+var timestamp = require('time-stamp');
 
 router.post('/', (req, res) => {
     console.log(req.body);
@@ -24,7 +25,8 @@ router.post('/', (req, res) => {
         res.json({
             name: data[0].hostname,
             ip: data[0].ip,
-            status: (data.length == 1) ? "UP" : "DOWN"
+            status: (data.length == 1) ? "UP" : "DOWN",
+            timestamp: timestamp('YYYY/MM/DD HH:mm:ss')
         });
     });
 
