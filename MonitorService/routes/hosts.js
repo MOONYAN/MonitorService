@@ -35,4 +35,22 @@ router.post('/', (req, res) => {
     quickscan.startScan();
 });
 
+router.get('/', (req, res) => {
+    let hosts = [
+        {
+            id: 1,
+            name: 'localhost',
+            ip: '127.0.0.1',
+            status: 'UP'
+        },
+        {
+            id: 2,
+            name: 'google.com.tw',
+            ip: '172.217.160.99',
+            status: 'UP'
+        }
+    ];
+    res.json( hosts );
+});
+
 module.exports = router;
