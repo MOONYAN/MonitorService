@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="config\host.js" />
+    <Compile Include="models\hostModel.js" />
     <Compile Include="routes\hosts.js">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

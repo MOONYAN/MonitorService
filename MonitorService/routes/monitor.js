@@ -9,7 +9,7 @@ router.post('/', (req, res) => {
     console.log(req.body);
 
     let host = req.body.host;
-    let address = host.ip || host.name;
+    let address = host.name;
     if (typeof address != 'string') {
         let error = 'address is not a string type';
         console.log(err);
