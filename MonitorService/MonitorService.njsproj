@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="config\host.js" />
     <Compile Include="models\hostModel.js" />
     <Compile Include="routes\hosts.js">
       <SubType>Code</SubType>
@@ -49,7 +48,6 @@
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="config\" />
     <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
