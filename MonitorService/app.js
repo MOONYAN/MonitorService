@@ -7,9 +7,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose'),
+    connection = mongoose.connect('mongodb://Sasuke:9487@ds033126.mlab.com:33126/narutomongo');
+
 //var routes = require('./routes/index');
 var users = require('./routes/users');
 var hosts = require('./routes/hosts');
+var monitor = require('./routes/monitor');
 
 var app = express();
 
@@ -35,6 +39,7 @@ app.use(function (req, res, next) {
 //app.use('/', routes);
 app.use('/users', users);
 app.use('/hosts', hosts);
+app.use('/monitor', monitor);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
