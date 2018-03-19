@@ -21,16 +21,18 @@ router.post('/', (req, res) => {
     let quickscan = new nmap.QuickScan(address);
 
     quickscan.on('complete', function (data) {
+        console.log('service onComplete');
         console.log(data);
         res.json({
-            name: data[0].hostname,
-            ip: data[0].ip,
+            name: (data.length == 0) ? "" : data[0].hostname,
+            ip: (data.length == 0) ? "" : data[0].ip,
             status: (data.length == 1) ? "UP" : "DOWN",
             timestamp: timestamp('YYYY/MM/DD HH:mm:ss')
         });
     });
 
     quickscan.on('error', function (error) {
+        console.log('service onError');
         console.log(error);
         res.json({ error: error });
     });
