@@ -24,14 +24,10 @@ router.get('/:id', (req, res) => {
     res.json(host);
 });
 
-//router.delete('/:id', (req, res) => {
-//    Host.findByIdAndRemove(req.params.id, (err, host) => {
-//        if (err)
-//            return res.json({ error: 'delete host error' });
-//        else
-//            return res.json({ message: 'delete host succeed' });
-//    });
-//});
+router.delete('/:id', (req, res) => {
+    db.get('hosts').remove({ id: req.params.id }).write();
+    return res.json({ message: 'delete host succeed' });
+});
 
 router.post('/', (req, res) => {
     let newHost = {
