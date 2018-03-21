@@ -12,7 +12,7 @@ var mongoose = require('mongoose'),
 
 //var routes = require('./routes/index');
 var users = require('./routes/users');
-var hosts = require('./routes/hosts');
+var hosts = require('./routes/txtHosts');
 var monitor = require('./routes/monitor');
 
 var app = express();
