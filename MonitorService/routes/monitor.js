@@ -34,7 +34,10 @@ router.post('/', (req, res) => {
     quickscan.on('error', function (error) {
         console.log('service onError');
         console.log(error);
-        res.json({ error: error });
+        res.json({
+            status: 'UNKNOWN',
+            timestamp: timestamp('YYYY/MM/DD HH:mm:ss')
+        });
     });
 
     quickscan.startScan();
