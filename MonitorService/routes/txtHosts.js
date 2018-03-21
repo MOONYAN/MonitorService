@@ -14,19 +14,10 @@ db.defaults({ hosts: [] }).write();
 
 //var Host = require('../models/hostModel');
 
-//router.get('/', (req, res) => {
-//    Host.find((err, hosts) => {
-//        if (err)
-//            return res.json({ error: 'get hosts error' });
-//        else {
-//            let eles = hosts.map((host) => {
-//                return { id: host.id, name: host.name };
-//            });
-//            return res.json(eles);
-//        }
-
-//    });
-//});
+router.get('/', (req, res) => {
+    let hosts = db.get('hosts').value();
+    res.json(hosts);
+});
 
 //router.get('/:id', (req, res) => {
 //    Host.findById(req.params.id, (err, host) => {
