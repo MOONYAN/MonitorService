@@ -1,0 +1,12 @@
+{
+  "hosts": [
+    {
+      "id": "r1jMFok9z",
+      "name": "gooogle.com"
+    },
+    {
+      "id": "SkBmYjyqG",
+      "name": "facebook.com"
+    }
+  ]
+}
