@@ -19,17 +19,10 @@ router.get('/', (req, res) => {
     res.json(hosts);
 });
 
-//router.get('/:id', (req, res) => {
-//    Host.findById(req.params.id, (err, host) => {
-//        if (err)
-//            return res.json({ error: 'get host error' });
-//        else
-//            return res.json({
-//                id: host.id,
-//                name: host.name
-//            });
-//    });
-//});
+router.get('/:id', (req, res) => {
+    let host = db.get('hosts').find({ id: req.params.id }).value();
+    res.json(host);
+});
 
 //router.delete('/:id', (req, res) => {
 //    Host.findByIdAndRemove(req.params.id, (err, host) => {
